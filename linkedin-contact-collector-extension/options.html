@@ -1,0 +1,51 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>LinkedIn Contact Collector</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 28px; max-width: 1000px; color: #111827; }
+  textarea { width: 100%; height: 180px; font-family: Consolas, monospace; }
+  button { margin: 6px 6px 6px 0; padding: 8px 12px; }
+  table { border-collapse: collapse; width: 100%; margin-top: 16px; font-size: 13px; }
+  th, td { border: 1px solid #d1d5db; padding: 6px 8px; vertical-align: top; }
+  th { background: #1f4e79; color: white; text-align: left; }
+  .muted { color: #6b7280; }
+  .bar { margin: 12px 0; padding: 10px; background: #f3f6f8; border-radius: 6px; }
+</style>
+<h1>LinkedIn Contact Collector</h1>
+<p class="muted">推荐：直接打开 LinkedIn 好友列表页，使用页面右上角浮动面板“从当前好友列表开始整理”。如果右上角没有面板，可以在这里点击“打开好友列表页”，然后刷新 LinkedIn 页面。</p>
+<p class="muted">好友列表页：<code>https://www.linkedin.com/mynetwork/invite-connect/connections/</code></p>
+<textarea id="urls" placeholder="https://www.linkedin.com/in/alfonsorj/"></textarea>
+<div>
+  <button id="openConnections">打开好友列表页</button>
+  <button id="start">按粘贴链接开始自动收集</button>
+  <button id="pause">暂停</button>
+  <button id="stopAll">停止所有任务</button>
+  <button id="resume">继续</button>
+  <button id="clearResults">清空结果</button>
+  <button id="exportCsv">导出 CSV</button>
+  <button id="exportExcel">导出美化 Excel</button>
+  <button id="copyCsv">复制 CSV</button>
+  <button id="copyJson">复制 JSON</button>
+  <button id="emailDraft">生成邮件草稿</button>
+</div>
+<div class="bar" id="status">正在读取状态...</div>
+<table id="results">
+  <thead>
+    <tr>
+      <th>公司名</th>
+      <th>姓名</th>
+      <th>国家</th>
+      <th>地区</th>
+      <th>邮箱</th>
+      <th>电话</th>
+      <th>行业</th>
+      <th>备注</th>
+      <th>职位/简介</th>
+      <th>全部网站</th>
+      <th>状态</th>
+      <th>更新时间</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<script src="options.js"></script>
